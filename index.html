@@ -393,7 +393,7 @@ img[src^="data:image/gif"]{image-rendering:pixelated}
     </div>
   </section>
 
-  <div class="gbox"><h3>Más fotos</h3><p class="gs">Conoce a nuestros personajes y mira las cajas sorpresa de cerca.</p><div class="strip" id="more"></div></div>
+  <div class="gbox"><h3>Más fotos</h3><p class="gs">Mira de cerca las cajas Bunna y las sorpresas que hay dentro.</p><div class="strip" id="more"></div></div>
 </div></section>
 </div>
 </main>
@@ -433,7 +433,7 @@ img[src^="data:image/gif"]{image-rendering:pixelated}
 <div class="toast" id="toast" role="status"><span id="tt"></span><button id="tv" type="button">Ver bolsa</button></div>
 
 <script>
-var WP=["57","313","542","4406"]; // número oficial, repartido en partes para que no se lea de corrido en el código
+var WP=["57","300","418","2407"]; // número oficial, repartido en partes para que no se lea de corrido en el código
 function waNum(){var n=WP.join("");return/^573\d{9}$/.test(n)?n:""}
 function clean(t,m){return String(t||"").replace(/[\u0000-\u001f\u007f<>]/g," ").replace(/\s+/g," ").trim().slice(0,m||300)}
 function waHref(t){var n=waNum();return n?"https://wa.me/"+n+"?text="+encodeURIComponent(String(t).replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g,"").slice(0,900)):"#"}
@@ -519,10 +519,10 @@ function drawProd(){var x=BOXES[pb],sg=$("#seg");sg.innerHTML="";
  var r=[["Contenido",BASIC_ITEMS.map(function(i){return i.n}).join(" · ")],["Elección de dulce y postre","Cuéntanos tus elecciones al enviar el pedido por WhatsApp."],["Entrega","1 a 3 días hábiles tras confirmar el pedido"]];
  $("#ban").style.setProperty("--c",x.c);$("#ban").querySelector("h2").textContent="Cajas";$("#sh").innerHTML='<h3>Caja Básica para '+x.audience+'</h3><div class="price">'+money(x.p)+'</div><dl>'+r.map(function(i){return"<dt>"+i[0]+"</dt><dd>"+i[1]+"</dd>"}).join("")+"</dl>";
  $("#padd").onclick=$("#dadd").onclick=function(){add(x.id)};cardsBuild()}
-var TS=document.querySelector(".path img").src,HS=document.querySelector(".art img").src,SRC={t:TS,g:"bunna-imagen-general.jpg",h:HS,j:"bunna-jaina-regalo.gif",k:"bunna-kun-lamer.gif",p:"bunna-fotos-cajas.jpg",d:PIC};
+var TS=document.querySelector(".path img").src,HS=document.querySelector(".art img").src,SRC={t:TS,g:"bunna-imagen-general.jpg",h:HS,p:"bunna-fotos-cajas.jpg",f1:"bunna-galeria-1.jpg",f2:"bunna-galeria-2.jpg",f3:"bunna-galeria-3.jpg",f4:"bunna-galeria-4.jpg",f5:"bunna-galeria-5.jpg",f6:"bunna-galeria-6.jpg"};
 document.querySelectorAll("[data-s]").forEach(function(i){i.src=SRC[i.dataset.s]});
-function gal(id,list){var w=$(id);list.forEach(function(g){var b=document.createElement("button");b.type="button";b.className="ph"+(g[0]==="h"?" cv":g[0]==="p"?" wide":g[0]==="d"?" dog":"");b.style.setProperty("--c",g[2]);var im=document.createElement("img");im.src=SRC[g[0]];im.alt=g[1];im.loading="lazy";b.appendChild(im);b.onclick=function(){$("#lbi").src=im.src;$("#lbi").alt=im.alt;$("#lb").hidden=false};w.appendChild(b)})}
-gal("#more",[["p","Cajas Bunna para niña y niño, listas para regalar","#f7f0d6"],["g","Vista general de las cajas bunna","#eaa36b"],["d","El perrito animado de bunna","#f7f0d6"],["j","Jaina, personaje de bunna","#f3b9a8"],["k","Kun, personaje de bunna","#f7f0d6"]]);
+function gal(id,list){var w=$(id);list.forEach(function(g){var b=document.createElement("button");b.type="button";b.className="ph"+(g[0]==="h"?" cv":g[0]==="p"||g[0].charAt(0)==="f"?" wide":"");b.style.setProperty("--c",g[2]);var im=document.createElement("img");im.src=SRC[g[0]];im.alt=g[1];im.loading="lazy";b.appendChild(im);b.onclick=function(){$("#lbi").src=im.src;$("#lbi").alt=im.alt;$("#lb").hidden=false};w.appendChild(b)})}
+gal("#more",[["p","Cajas Bunna para niña y niño, listas para regalar","#f7f0d6"],["g","Vista general de las cajas bunna","#eaa36b"],["f1","Caja rosa Bunna con dulces, stickers y otras sorpresas","#f3b9a8"],["f2","Cajas Bunna rosa y azul para niña y niño","#f7f0d6"],["f3","Caja azul Bunna para niño","#eaa36b"],["f4","Cajas Bunna azul y rosa vistas desde arriba","#f7f0d6"],["f5","Caja azul Bunna acompañada de dulces y stickers","#eaa36b"],["f6","Caja rosa Bunna para niña","#f3b9a8"]]);
 $("#lb").onclick=function(){this.hidden=true};document.addEventListener("keydown",function(e){if(e.key==="Escape")$("#lb").hidden=true});
 /* asistente */
 var A_P=["Ver qué trae","tab","producto"],A_C=["Ver cajas","hash","cajas"],A_B=["Abrir mi bolsa","bag"],A_W=["Ir a contacto","hash","contacto"],A_O=["Ver opiniones","hash","opiniones"],A_T=["Ir a contacto","hash","contacto"];
